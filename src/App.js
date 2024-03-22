@@ -1,25 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import Footer from './components/footer';
+import Home from './components/home/home';
+import PrimaryButton from './components/primary-button/primary-button';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const Header = (props) =>{
+  return <h1>{props.title}</h1>;
 }
 
-export default App;
+const MyApp = () => {
+  const list = [
+    "Amitabh",
+    "Rekha",
+    "Jaya"
+  ];
+  return <>
+  <Header title="My Title"/>
+  <Home list={list}/>
+  <PrimaryButton label="Click Me"/>
+  <Footer notice="Copyright 2024 from App"/>
+  </>;
+}
+
+export default MyApp;
